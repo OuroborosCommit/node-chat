@@ -22,15 +22,10 @@ socket.emit('newMessage', generateMessage('Admin','Welcome to the chat'));
 socket.broadcast.emit('newMessage',generateMessage('Admin','New user has joined the chat'));
 
 
-socket.on('createMessage', (message) => {
+socket.on('createMessage', (message,callback) => {
 console.log('CreateMessage',message);
 io.emit('newMessage', generateMessage(message.from, message.text));
-// socket.broadcast.emit('newMessage',{
-// 	from: message.from,
-// 	text:message.text,
-// 	createdAt : new Date().getTime()
-// });
-
+callback('This is from the server');
 });
 
 
