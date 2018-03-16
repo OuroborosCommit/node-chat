@@ -1,3 +1,5 @@
+//Testing the email config on git
+
 	var socket = io();
 
 socket.on('connect', function()  {
