@@ -11,6 +11,8 @@ socket.on('disconnect', function() {
 });
 
 socket.on('newMessage', function (message) {
+
+	
 	var formattedTime = moment(message.createdAt).format('hh:mm a');
 	console.log('newMessage',message);
 	var li = jQuery('<li></li>');
